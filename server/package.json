@@ -1,0 +1,52 @@
+{
+  "name": "sancho-server",
+  "version": "1.0.0",
+  "description": "server side for sancho project",
+  "private": true,
+  "dependencies": {
+    "egg": "^2.11.2",
+    "egg-logger": "^1.7.1",
+    "egg-scripts": "^2.9.1",
+    "egg-sequelize": "^4.1.0",
+    "mysql2": "^1.6.1"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "co-wechat": "^2.3.0",
+    "egg-bin": "^4.9.0",
+    "egg-ci": "^1.9.2",
+    "egg-mock": "^3.20.1",
+    "eslint": "^5.6.1",
+    "eslint-config-egg": "^7.1.0",
+    "webstorm-disable-index": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon --title=sancho-server",
+    "start:production": "egg-scripts start --daemon --title=sancho-server --env=production",
+    "stop": "egg-scripts stop --title=sancho-server",
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod",
+    "migrate:new": "egg-sequelize migration:create",
+    "migrate:up": "egg-sequelize db:migrate",
+    "migrate:down": "egg-sequelize db:migrate:undo"
+  },
+  "ci": {
+    "version": "8"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "davidnotes",
+  "license": "MIT"
+}
